@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Configuración de herramientas del agente
+.agents/
+skills-lock.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Respaldos
+/tmp/snake_backup/
