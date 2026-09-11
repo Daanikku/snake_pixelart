@@ -1,18 +1,18 @@
-# 🐍 Snake Evolution
+# Snake Pixel Art
 
 Juego clásico de **Snake** desarrollado en **Python** con **Pygame**. Proyecto académico cuya característica distintiva es el uso de un **generador de números aleatorios por congruencia lineal (LCG)** implementado desde cero, en lugar del módulo `random` de Python.
 
-## ✨ Características
+## Características
 
-- 🕹️ Mecánica clásica de Snake (movimiento por celdas, crecimiento, colisiones).
-- 🍎 **6 tipos de comida** con efectos distintos: `normal`, `bonus`, `speed_up`, `slow`, `grow` y `shrink`.
-- ⚡ Power-ups con duración limitada (velocidad, lentitud, crecimiento).
-- 🏆 **Top 5 de puntuaciones** persistido en `ranking.json` (nombre + puntuación).
-- 🎵 Música de fondo y efectos de sonido.
-- 🎨 Sprites propios; fondos generados por IA y un sonido con referencia externa (ver [Atribución de assets](#-atribución-de-assets)); fallbacks automáticos si falta algún asset.
-- 🔢 Generador aleatorio **LCG** propio (`a=1103515245, c=12345, m=32768`), con período completo de 32768.
+- Mecánica clásica de Snake (movimiento por celdas, crecimiento, colisiones).
+- **6 tipos de comida** con efectos distintos: `normal`, `bonus`, `speed_up`, `slow`, `grow` y `shrink`.
+- Power-ups con duración limitada (velocidad, lentitud, crecimiento).
+- **Top 5 de puntuaciones** persistido en `ranking.json` (nombre + puntuación).
+- Música de fondo y efectos de sonido.
+- Sprites propios; fondos generados por IA y un sonido con referencia externa (ver [Atribución de assets](#-atribución-de-assets)); fallbacks automáticos si falta algún asset.
+- Generador aleatorio **LCG** propio (`a=1103515245, c=12345, m=32768`), con período completo de 32768.
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 El proyecto sigue el patrón **MVC (Modelo-Vista-Controlador)** con una separación estricta de responsabilidades:
 
@@ -39,7 +39,7 @@ Snake/
 
 Flujo principal: `main.py → Game.run()` → bucle `handle_events / update / draw` → `pygame.display.flip()`.
 
-## 🚀 Instalación y ejecución
+## Instalación y ejecución
 
 Requisitos: **Python 3.10+**.
 
@@ -61,45 +61,42 @@ python main.py
 
 > **Controles:** menú `1` jugar / `2` opciones / `3` salir · flechas para mover la serpiente · `S` activar/desactivar sonido · `ESC` volver · `Enter` confirmar.
 
-> 💡 El juego incluye fallbacks: si falta un asset o no hay dispositivo de audio, continúa sin imágenes/sonido en lugar de fallar.
+> El juego incluye fallbacks: si falta un asset o no hay dispositivo de audio, continúa sin imágenes/sonido en lugar de fallar.
 
-## 🧪 Pruebas
-
-El comportamiento se validó mediante pruebas de paridad y smoke tests (headless con `SDL_VIDEODRIVER=dummy`).
-
-## 🙏 Atribución de assets
+## Atribución de assets
 
 Este proyecto incluye recursos generados con **inteligencia artificial** y una **referencia sonora** a un videojuego comercial. A continuación se detalla el origen de cada asset para dar el crédito correspondiente y evitar malentendidos.
 
-### 🖼️ Fondos generados por IA
+### Fondos generados por IA
 
 | Asset | Origen |
 |-------|--------|
 | `assets/background/bg_menu.png` | Generado con **ChatGPT (OpenAI)** |
 | `assets/background/bg_death.png` | Generado con **ChatGPT (OpenAI)** |
 | `assets/background/bg_name_input.png` | Generado con **ChatGPT (OpenAI)** |
-| `assets/background/bg_config.png` | Generado con **IA** |
+| `assets/background/bg_config.png` | Generado con **Gemini (Google)** |
 
-### 🔊 Efectos de sonido
+### Efectos de sonido
 
 | Asset | Origen |
 |-------|--------|
+| `assets/background/main.mp3` | Generado con **Gemini (Google)** |
 | `assets/sound/death.mp3` | **Referencia** al sonido de muerte del videojuego **Dark Souls** (© **FromSoftware** / **Bandai Namco Entertainment**) |
 
-> ℹ️ `death.mp3` es una **referencia/homenaje** al sonido característico de *Dark Souls*: no es un asset original del proyecto. Los derechos del sonido original pertenecen a sus autores.
+> `death.mp3` es una **referencia/homenaje** al sonido característico de *Dark Souls*: no es un asset original del proyecto. Los derechos del sonido original pertenecen a sus autores.
 
-### ✍️ Resto de assets
+### Resto de assets
 
-Los sprites de la serpiente (`assets/snake/`) y de la comida (`assets/food/`), la fuente `arcade.ttf` y los sonidos `eat.wav` y `main.mp3` son de **elaboración propia** del autor.
+Los sprites de la serpiente (`assets/snake/`) y de la comida (`assets/food/`), son de **elaboración propia** del autor.
 
-## ⚖️ Aviso legal
+## Aviso legal
 
 - Este proyecto tiene un **propósito exclusivamente académico y sin ánimo de lucro** (portfolio/currículum).
 - El sonido `death.mp3` es un **homenaje/referencia** al sonido de muerte de *Dark Souls* de **FromSoftware** (publicado por **Bandai Namco Entertainment**). No se pretende infringir los derechos de autor ni de marca de sus titulares.
 - Los fondos generados por IA se utilizan conforme a los **términos de uso** de la herramienta empleada (ChatGPT / OpenAI).
 - Para un uso **comercial o público**, se recomienda sustituir `death.mp3` y los fondos generados por IA por recursos con licencia libre (CC0, CC-BY, etc.).
 
-## 📚 Contexto académico
+## Contexto académico
 
 La clase `LCG` en `snake_game/lcg.py` implementa la recurrencia:
 
@@ -109,6 +106,6 @@ Xn+1 = (a·Xn + c) mod m      con a=1103515245, c=12345, m=32768
 
 Este generador sustituye al módulo `random` de Python como ejercicio de implementación de generadores pseudoaleatorios.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto se distribuye bajo la **Licencia MIT** (ver [LICENSE](LICENSE)). Los assets de terceros y generados por IA conservan los derechos de sus respectivos autores (ver [Atribución de assets](#-atribución-de-assets)).
